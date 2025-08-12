@@ -21,49 +21,7 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      position: relative;
-      overflow-x: hidden;
     }
-    /* Íconos casino animados (fichas, dados, billetes, diamantes) */
-    .casino-icon {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      opacity: 0.75;
-      animation-timing-function: ease-in-out;
-      filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));
-    }
-    /* Animaciones individuales para movimiento lento y suave */
-    @keyframes floatUpDown {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-    @keyframes floatLeftRight {
-      0%, 100% { transform: translateX(0); }
-      50% { transform: translateX(15px); }
-    }
-    /* Posiciones y animaciones */
-    .icon-chip {
-      top: 10%;
-      left: 5%;
-      animation: floatUpDown 4s infinite;
-    }
-    .icon-dice {
-      top: 30%;
-      right: 7%;
-      animation: floatLeftRight 5s infinite;
-    }
-    .icon-bill {
-      bottom: 20%;
-      left: 8%;
-      animation: floatUpDown 3.5s infinite;
-    }
-    .icon-diamond {
-      bottom: 10%;
-      right: 12%;
-      animation: floatLeftRight 4.5s infinite;
-    }
-    /* Resto de estilos previos */
     header {
       text-align: center;
       margin-bottom: 40px;
@@ -147,18 +105,21 @@
       0%, 100% { opacity: 0; transform: scale(0.5); }
       50% { opacity: 1; transform: scale(1.2); }
     }
-    header h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    }
     main {
       max-width: 450px;
-      background: rgba(0,0,0,0.4);
+      background:
+        url('https://cdn-icons-png.flaticon.com/512/833/833314.png') 15% 20% no-repeat,
+        url('https://cdn-icons-png.flaticon.com/512/616/616408.png') 75% 10% no-repeat,
+        url('https://cdn-icons-png.flaticon.com/512/3513/3513303.png') 25% 80% no-repeat,
+        url('https://cdn-icons-png.flaticon.com/512/2331/2331710.png') 80% 75% no-repeat,
+        rgba(0,0,0,0.4);
+      background-size: 35px 35px;
+      background-blend-mode: multiply;
       padding: 25px 30px;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       text-align: center;
+      position: relative;
     }
     main p {
       font-size: 1.1rem;
@@ -214,12 +175,6 @@
   </style>
 </head>
 <body>
-  <!-- Íconos casino -->
-  <img src="https://cdn-icons-png.flaticon.com/512/833/833314.png" alt="Ficha de casino" class="casino-icon icon-chip" />
-  <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" alt="Dado" class="casino-icon icon-dice" />
-  <img src="https://cdn-icons-png.flaticon.com/512/3513/3513303.png" alt="Billete" class="casino-icon icon-bill" />
-  <img src="https://cdn-icons-png.flaticon.com/512/2331/2331710.png" alt="Diamante" class="casino-icon icon-diamond" />
-
   <header>
     <div class="logo-container" aria-label="Logo Facu Casino">
       <img src="https://i.ibb.co/9H4yWdT6/facu-casino-logo-transparente.png" alt="Facu Casino™ Logo" />
