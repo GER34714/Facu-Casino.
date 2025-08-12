@@ -1,56 +1,125 @@
-<header>
-  <!-- Logo animado -->
-  <img src="1001291520.webp" alt="Facu Casino™ Logo" class="logo-animado" />
-  <h1>¡Bienvenido a Facu Casino™!</h1>
-
-  <!-- Botón de WhatsApp -->
-  <a href="https://wa.me/5491125127839" class="btn-whatsapp" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="icono-wp" />
-    Chateá con nosotros
-  </a>
-</header>
-
-<style>
-  /* Logo animado con pulso + neón */
-  .logo-animado {
-    max-width: 200px;
-    margin-bottom: 15px;
-    animation: pulso-neon 3s infinite ease-in-out;
-  }
-
-  @keyframes pulso-neon {
-    0%, 100% {
-      transform: scale(1) rotate(0deg);
-      filter: drop-shadow(0 0 5px #f5c518) drop-shadow(0 0 10px #ff00ff);
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Facu Casino™ - Tu lugar de suerte</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    50% {
-      transform: scale(1.1) rotate(3deg);
-      filter: drop-shadow(0 0 20px #f5c518) drop-shadow(0 0 30px #ff00ff);
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a0dad, #f5c518);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
     }
-  }
 
-  /* Botón WhatsApp */
-  .btn-whatsapp {
-    display: inline-flex;
-    align-items: center;
-    background-color: #25d366;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 18px;
-    box-shadow: 0 0 10px #25d366, 0 0 20px #25d366;
-    transition: transform 0.3s ease;
-  }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  .btn-whatsapp:hover {
-    transform: scale(1.05);
-  }
+    header img {
+      max-width: 180px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+    }
 
-  .icono-wp {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
-  }
-</style>
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+    }
+
+    main {
+      max-width: 450px;
+      background: rgba(0,0,0,0.4);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    main p {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+
+    a.button {
+      display: inline-block;
+      background: #f5c518;
+      color: #6a0dad;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 1.25rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+      transition: all 0.3s ease;
+    }
+
+    a.button:hover {
+      background: #ffd83d;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #eee;
+    }
+
+    footer a {
+      color: #f5c518;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        max-width: 100%;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="1001291520.webp" alt="Facu Casino™ Logo" />
+    <h1>¡Bienvenido a Facu Casino™!</h1>
+  </header>
+
+  <main>
+    <p>La mejor experiencia de juego virtual en Argentina.  
+    Cargá fichas, jugá y ganá con responsabilidad.</p>
+
+    <a href="https://wa.me/5491125127839" target="_blank" class="button" rel="noopener noreferrer">
+      💬 Contactanos por WhatsApp
+    </a>
+  </main>
+
+  <footer>
+    <p>© 2025 Facu Casino™ - <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a></p>
+  </footer>
+
+</body>
+</html>
