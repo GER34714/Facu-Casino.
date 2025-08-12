@@ -1,132 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Facu Casino™ - Tu lugar de suerte</title>
-  <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina.">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #6a0dad, #f5c518);
-      color: #fff;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 15px;
-      text-align: center;
-      position: relative;
-    }
-    header {
-      margin-bottom: 15px; /* reducido */
-    }
-    header img {
-      max-width: 200px; /* un poco más chico */
-      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
-      opacity: 0;
-      transform: scale(0.7);
-      animation: fadeZoomIn 1.2s ease forwards;
-    }
-    @keyframes fadeZoomIn {
-      to { opacity: 1; transform: scale(1); }
-    }
-    h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-      opacity: 0;
-      animation: fadeZoomIn 1.2s ease forwards;
-      animation-delay: 0.3s;
-      margin-bottom: 10px; /* reducido */
-    }
-    main {
-      max-width: 450px;
-      background: rgba(0,0,0,0.4);
-      padding: 15px 20px; /* más compacto */
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      opacity: 0;
-      animation: fadeZoomIn 1.2s ease forwards;
-      animation-delay: 0.6s;
-    }
-    main p {
-      font-size: 1rem;
-      line-height: 1.4;
-      margin-bottom: 15px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-    }
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 10px gold, 0 0 20px gold; }
-      50% { box-shadow: 0 0 15px #ffdf00, 0 0 30px #ffdf00; }
-    }
-    main a.button {
-      display: inline-flex;
-      align-items: center;
-      background: #25D366;
-      color: #fff;
-      font-weight: 700;
-      padding: 12px 24px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1.15rem;
-      transition: background 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      animation: glow 2s infinite;
-    }
-    main a.button img {
-      height: 28px;
-      margin-right: 8px;
-    }
-    main a.button:hover {
-      background: #1ebd5a;
-    }
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.5);
-      padding: 8px; /* más chico */
-      font-size: 0.85rem;
-      text-align: center;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-      backdrop-filter: blur(4px);
-    }
-    footer a {
-      color: #f5c518;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    @media (max-width: 480px) {
-      h1 { font-size: 1.8rem; }
-      main { padding: 15px; }
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Facu Casino</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #000;
+    overflow-x: hidden;
+  }
+  /* Fondo partículas */
+  #particles-js {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+  }
+  .container {
+    max-width: 480px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+  }
+  img.logo {
+    width: 80%;
+    max-width: 300px;
+    margin: 20px auto;
+    display: block;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 10px 0 20px;
+    color: gold;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    background: gold;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255,215,0,0.6);
+    transition: transform 0.2s;
+  }
+  .button:hover {
+    transform: scale(1.05);
+  }
+  .button img {
+    width: 24px;
+    margin-right: 10px;
+  }
+  /* Beneficios */
+  .benefits {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+  }
+  .benefit {
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  /* Testimonios */
+  .testimonials {
+    margin-top: 30px;
+  }
+  .testimonial {
+    font-style: italic;
+    background: rgba(255,255,255,0.05);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  /* Cómo funciona */
+  .steps {
+    margin-top: 30px;
+  }
+  .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.05);
+    padding: 10px;
+    border-radius: 10px;
+  }
+  .step span {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: gold;
+  }
+  /* Footer fijo */
+  footer {
+    position: fixed;
+    bottom: 0; left: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    padding: 10px;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #ccc;
+    border-top: 1px solid rgba(255,215,0,0.4);
+  }
+  /* Botón flotante WhatsApp */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 70px;
+    right: 15px;
+    background: #25D366;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  }
+  .whatsapp-float img {
+    width: 40px;
+    height: 40px;
+  }
+</style>
 </head>
 <body>
-  <header>
-    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" />
-    <h1>¡Bienvenido a Facu Casino™!</h1>
-  </header>
+<div id="particles-js"></div>
+<div class="container">
+  <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino" class="logo" />
+  <h1>Tu cuenta en menos de 1 minuto</h1>
+  <a href="https://wa.me/541125127839?text=Hola%20FACU%2C%20%C2%BFme%20creas%20un%20usuario%3F%20Mi%20nombre%20es%3A%20" class="button" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    Contactanos por WhatsApp
+  </a>
 
-  <main>
-    <p>La mejor experiencia de juego virtual en Argentina.<br />
-    Cargá fichas, jugá y ganá con responsabilidad.</p>
+  <!-- Beneficios -->
+  <div class="benefits">
+    <div class="benefit">🎯 Pagos rápidos</div>
+    <div class="benefit">🎰 Juegos populares</div>
+    <div class="benefit">💎 Bonos exclusivos</div>
+    <div class="benefit">📱 100% online</div>
+  </div>
 
-    <a href="https://wa.me/+5491125127839" target="_blank" class="button" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      Contactanos por WhatsApp
-    </a>
-  </main>
+  <!-- Testimonios -->
+  <div class="testimonials">
+    <div class="testimonial">"Ya gané mi primer premio en 2 días" – María G.</div>
+    <div class="testimonial">"Recibí el pago en minutos" – Lucas P.</div>
+  </div>
 
-  <footer>
-    <p>© 2025 Facu Casino™ -  
-      <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a>
-    </p>
-  </footer>
+  <!-- Cómo funciona -->
+  <div class="steps">
+    <div class="step"><span>📩</span>Contactanos por WhatsApp</div>
+    <div class="step"><span>💳</span>Cargá saldo</div>
+    <div class="step"><span>🎲</span>Jugá y ganá</div>
+  </div>
+</div>
+
+<!-- Botón flotante WhatsApp -->
+<a href="https://wa.me/541125127839?text=Hola%20FACU%2C%20%C2%BFme%20creas%20un%20usuario%3F%20Mi%20nombre%20es%3A%20" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+</a>
+
+<!-- Footer fijo -->
+<footer>
+  Facu Casino 2025 • Jugar con responsabilidad • +18
+</footer>
+
+<!-- Partículas -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 40, density: { enable: true, value_area: 800 } },
+    color: { value: "#FFD700" },
+    shape: { type: "circle" },
+    opacity: { value: 0.6, random: true },
+    size: { value: 3, random: true },
+    move: { enable: true, speed: 1, direction: "none", out_mode: "out" }
+  },
+  interactivity: {
+    events: { onhover: { enable: false }, onclick: { enable: false } }
+  }
+});
+</script>
 </body>
 </html>
