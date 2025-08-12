@@ -5,13 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facu Casino™ - Tu lugar de suerte</title>
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #6a0dad, #f5c518);
@@ -22,44 +16,42 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      text-align: center;
-      animation: fadeIn 1.2s ease;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    header { text-align: center; margin-bottom: 40px; }
     header img {
       max-width: 180px;
       margin-bottom: 15px;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.4));
+      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+      opacity: 0;
+      transform: scale(0.8);
+      animation: fadeZoomIn 1.2s ease forwards;
     }
-
+    @keyframes fadeZoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
     header h1 {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
       font-weight: 700;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-      margin-bottom: 20px;
     }
-
     main {
       max-width: 450px;
       background: rgba(0,0,0,0.4);
-      padding: 25px;
-      border-radius: 15px;
+      padding: 25px 30px;
+      border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
     }
-
     main p {
-      font-size: 1.15rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.5;
       margin-bottom: 25px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
-
-    a.button {
+    main a.button {
       display: inline-block;
       background: #f5c518;
       color: #6a0dad;
@@ -68,58 +60,41 @@
       border-radius: 30px;
       text-decoration: none;
       font-size: 1.25rem;
+      transition: background 0.3s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.25);
-      transition: all 0.3s ease;
     }
-
-    a.button:hover {
-      background: #ffd83d;
-      transform: scale(1.05);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.35);
-    }
-
+    main a.button:hover { background: #d1a309; color: #4a0676; }
     footer {
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 0.9rem;
-      color: #eee;
+      text-align: center;
+      max-width: 450px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
-
-    footer a {
-      color: #f5c518;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
+    footer a { color: #f5c518; text-decoration: none; font-weight: 600; }
     @media (max-width: 480px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      main {
-        max-width: 100%;
-        padding: 20px;
-      }
+      main { max-width: 100%; padding: 20px; }
+      header h1 { font-size: 2rem; }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="1001291520.webp" alt="Facu Casino™ Logo" />
+    <img src="data:image/webp;base64,UklGRl4WBwBXRUJQVlA4TFIWBwAv/8P/AM1IjGQ7bJu5+z8gME/qv2ACcNRBRP8nQH4c/ZF34o94iR27v+TdLejFP/..." 
+    alt="Facu Casino™ Logo" />
     <h1>¡Bienvenido a Facu Casino™!</h1>
   </header>
 
   <main>
-    <p>La mejor experiencia de juego virtual en Argentina.  
+    <p>La mejor experiencia de juego virtual en Argentina.<br>
     Cargá fichas, jugá y ganá con responsabilidad.</p>
-
-    <a href="https://wa.me/5491125127839" target="_blank" class="button" rel="noopener noreferrer">
-      💬 Contactanos por WhatsApp
+    <a href="https://wa.me/1125127839" target="_blank" class="button" rel="noopener noreferrer">
+      Contactanos por WhatsApp
     </a>
   </main>
 
   <footer>
     <p>© 2025 Facu Casino™ - <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a></p>
   </footer>
-
 </body>
 </html>
