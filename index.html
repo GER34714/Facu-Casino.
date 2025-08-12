@@ -1,16 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Facu Casino™ - Tu lugar de suerte</title>
-  <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad." />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #6a0dad, #f5c518);
@@ -26,35 +22,39 @@
       text-align: center;
       margin-bottom: 40px;
     }
+    header img {
+      max-width: 180px;
+      margin-bottom: 15px;
+      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+      opacity: 0;
+      transform: scale(0.7);
+      animation: fadeZoomIn 1.2s ease forwards;
+      position: relative;
+      overflow: visible;
+    }
+    @keyframes fadeZoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+    /* Animación de brillo moviéndose */
+    @keyframes shine {
+      0% {
+        left: -75%;
+      }
+      100% {
+        left: 125%;
+      }
+    }
+    /* Contenedor para efecto brillo */
     .logo-container {
       position: relative;
       display: inline-block;
-      overflow: visible;
+      overflow: hidden;
       border-radius: 12px;
     }
-    .logo-container::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 140%;
-      height: 140%;
-      background: radial-gradient(circle, rgba(255, 197, 24, 0.6), transparent 70%);
-      border-radius: 50%;
-      transform: translate(-50%, -50%) scale(1);
-      animation: pulseHalo 3s infinite ease-in-out;
-      z-index: -2;
-    }
-    @keyframes pulseHalo {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 0.7;
-      }
-      50% {
-        transform: translate(-50%, -50%) scale(1.1);
-        opacity: 0.4;
-      }
-    }
+    /* Capa de brillo */
     .logo-container::after {
       content: '';
       position: absolute;
@@ -67,59 +67,19 @@
       animation: shine 2.5s linear infinite;
       pointer-events: none;
       border-radius: 12px;
-      z-index: 1;
     }
-    @keyframes shine {
-      0% { left: -75%; }
-      100% { left: 125%; }
-    }
-    header img {
-      max-width: 180px;
-      margin-bottom: 15px;
-      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
-      opacity: 0;
-      transform: scale(0.7);
-      animation: fadeZoomIn 1.2s ease forwards;
-      position: relative;
-      overflow: visible;
-      z-index: 2;
-    }
-    @keyframes fadeZoomIn {
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: white;
-      border-radius: 50%;
-      filter: drop-shadow(0 0 6px #fff);
-      opacity: 0;
-      animation: sparkleAnim 3s infinite;
-      z-index: 3;
-    }
-    @keyframes sparkleAnim {
-      0%, 100% { opacity: 0; transform: scale(0.5); }
-      50% { opacity: 1; transform: scale(1.2); }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
     }
     main {
       max-width: 450px;
-      background:
-        url('https://cdn-icons-png.flaticon.com/512/833/833314.png') 15% 20% no-repeat,
-        url('https://cdn-icons-png.flaticon.com/512/616/616408.png') 75% 10% no-repeat,
-        url('https://cdn-icons-png.flaticon.com/512/3513/3513303.png') 25% 80% no-repeat,
-        url('https://cdn-icons-png.flaticon.com/512/2331/2331710.png') 80% 75% no-repeat,
-        rgba(0,0,0,0.4);
-      background-size: 35px 35px;
-      background-blend-mode: multiply;
+      background: rgba(0,0,0,0.4);
       padding: 25px 30px;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       text-align: center;
-      position: relative;
     }
     main p {
       font-size: 1.1rem;
@@ -176,13 +136,8 @@
 </head>
 <body>
   <header>
-    <div class="logo-container" aria-label="Logo Facu Casino">
+    <div class="logo-container">
       <img src="https://i.ibb.co/9H4yWdT6/facu-casino-logo-transparente.png" alt="Facu Casino™ Logo" />
-      <div class="sparkle" style="top: 12%; left: 18%; animation-delay: 0s;"></div>
-      <div class="sparkle" style="top: 38%; left: 65%; animation-delay: 1.1s;"></div>
-      <div class="sparkle" style="top: 75%; left: 50%; animation-delay: 2.2s;"></div>
-      <div class="sparkle" style="top: 22%; left: 80%; animation-delay: 0.7s;"></div>
-      <div class="sparkle" style="top: 60%; left: 20%; animation-delay: 1.7s;"></div>
     </div>
     <h1>¡Bienvenido a Facu Casino™!</h1>
   </header>
@@ -191,7 +146,7 @@
     <p>La mejor experiencia de juego virtual en Argentina.<br />
     Cargá fichas, jugá y ganá con responsabilidad.</p>
 
-    <a href="https://wa.me/1125127839" target="_blank" class="button" rel="noopener noreferrer" aria-label="Contactanos por WhatsApp">
+    <a href="https://wa.me/1125127839" target="_blank" class="button" rel="noopener noreferrer">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       Contactanos por WhatsApp
     </a>
