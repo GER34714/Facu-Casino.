@@ -9,7 +9,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #1a002b;
+      background: linear-gradient(135deg, #6a0dad, #f5c518);
       color: #fff;
       min-height: 100vh;
       display: flex;
@@ -20,124 +20,165 @@
       text-align: center;
       overflow: hidden;
     }
-
-    /* Fondo animado estilo luces de casino */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(255,215,0,0.15) 10%, transparent 60%),
-                  radial-gradient(circle, rgba(255,0,150,0.15) 10%, transparent 60%),
-                  radial-gradient(circle, rgba(0,200,255,0.15) 10%, transparent 60%);
-      background-size: 40% 40%;
-      animation: casinoLights 15s linear infinite;
-      z-index: 0;
-    }
-    @keyframes casinoLights {
-      0% { transform: translate(0,0); }
-      50% { transform: translate(-25%, -25%); }
-      100% { transform: translate(0,0); }
-    }
-
-    /* Partículas brillantes */
-    .sparkles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
+    canvas {
+      position: fixed;
       top: 0;
       left: 0;
-      pointer-events: none;
-      background: transparent;
-      z-index: 1;
+      z-index: -1;
     }
-    .sparkle {
-      position: absolute;
-      width: 6px;
-      height: 6px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 50%;
-      animation: sparkleMove 6s linear infinite;
+    header {
+      margin-bottom: 30px;
     }
-    @keyframes sparkleMove {
-      0% { transform: translateY(0) scale(1); opacity: 1; }
-      100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
-    }
-
-    header { margin-bottom: 40px; position: relative; z-index: 2; }
     header img {
-      max-width: 240px;
-      filter: drop-shadow(0px 0px 12px rgba(255,215,0,0.8));
+      max-width: 220px;
+      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
       animation: fadeZoomIn 1.2s ease forwards;
     }
-
     @keyframes fadeZoomIn {
-      0% { opacity: 0; transform: scale(0.7); }
+      0% { opacity: 0; transform: scale(0.8); }
       100% { opacity: 1; transform: scale(1); }
     }
-
     h1 {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
       font-weight: 700;
-      text-shadow: 0 0 10px gold, 0 0 20px rgba(255,215,0,0.5);
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.3s;
     }
-
     main {
-      position: relative;
       max-width: 450px;
-      background: rgba(0,0,0,0.55);
-      padding: 25px 30px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4), 0 0 15px rgba(255,215,0,0.3);
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      margin-top: 20px;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.6s;
-      z-index: 2;
     }
-
     main p {
-      font-size: 1.15rem;
-      line-height: 1.6;
+      font-size: 1.1rem;
+      line-height: 1.5;
       margin-bottom: 25px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
-
     main a.button {
       display: inline-flex;
       align-items: center;
-      background: linear-gradient(135deg, #25D366, #128C7E);
+      background: #25D366;
       color: #fff;
       font-weight: 700;
       padding: 14px 28px;
-      border-radius: 50px;
+      border-radius: 30px;
       text-decoration: none;
       font-size: 1.25rem;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4), 0 0 15px rgba(37,211,102,0.5);
+      transition: background 0.3s ease;
+      animation: glow 2s infinite;
     }
     main a.button img {
-      height: 32px;
+      height: 28px;
       margin-right: 10px;
     }
     main a.button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.5), 0 0 25px rgba(37,211,102,0.7);
+      background: #1ebd5a;
     }
-
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 8px gold, 0 0 16px gold; }
+      50% { box-shadow: 0 0 12px #ffdf00, 0 0 24px #ffdf00; }
+    }
     footer {
-      margin-top: 50px;
+      margin-top: 40px;
       font-size: 0.9rem;
-      text-align: center;
-      max-width: 450px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.9s;
-      z-index: 2;
     }
     footer a {
       color: #f5c518;
-      text-decoratio
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      main { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <header>
+    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" />
+    <h1>¡Bienvenido a Facu Casino™!</h1>
+  </header>
+
+  <main>
+    <p>La mejor experiencia de juego virtual en Argentina.<br />
+    Cargá fichas, jugá y ganá con responsabilidad.</p>
+
+    <a href="https://wa.me/1125127839" target="_blank" class="button" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      Contactanos por WhatsApp
+    </a>
+  </main>
+
+  <footer>
+    <p>© 2025 Facu Casino™ - 
+      <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a>
+    </p>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particlesArray;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = (Math.random() - 0.5) * 0.4;
+        this.speedY = (Math.random() - 0.5) * 0.4;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.2) this.size -= 0.0005;
+      }
+      draw() {
+        ctx.fillStyle = "rgba(255, 255, 200, 0.8)";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      for (let i = 0; i < 60; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  </script>
+</body>
+</html>
