@@ -15,7 +15,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       padding: 20px;
       text-align: center;
       overflow: hidden;
@@ -27,7 +27,7 @@
       z-index: -1;
     }
     header {
-      margin-bottom: 30px;
+      margin-top: 30px;
     }
     header img {
       max-width: 220px;
@@ -47,11 +47,11 @@
     }
     main {
       max-width: 450px;
-      background: rgba(0,0,0,0.4);
+      background: rgba(0,0,0,0.45);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      margin-top: 20px;
+      margin: 20px 0;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.6s;
     }
@@ -86,11 +86,14 @@
       50% { box-shadow: 0 0 12px #ffdf00, 0 0 24px #ffdf00; }
     }
     footer {
-      margin-top: 40px;
+      padding: 15px;
       font-size: 0.9rem;
+      background: rgba(0,0,0,0.4);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 480px;
+      margin-bottom: 15px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-      animation: fadeZoomIn 1.2s ease forwards;
-      animation-delay: 0.9s;
     }
     footer a {
       color: #f5c518;
@@ -115,7 +118,7 @@
     <p>La mejor experiencia de juego virtual en Argentina.<br />
     Cargá fichas, jugá y ganá con responsabilidad.</p>
 
-    <a href="https://wa.me/1125127839" target="_blank" class="button" rel="noopener noreferrer">
+    <a href="https://wa.me/5491125127839" target="_blank" class="button" rel="noopener noreferrer">
       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
       Contactanos por WhatsApp
     </a>
@@ -153,7 +156,7 @@
         if (this.size > 0.2) this.size -= 0.0005;
       }
       draw() {
-        ctx.fillStyle = "rgba(255, 255, 200, 0.8)";
+        ctx.fillStyle = "rgba(255, 215, 0, 0.8)";
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
