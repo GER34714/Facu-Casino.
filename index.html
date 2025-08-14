@@ -16,8 +16,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 20px;
-      padding-bottom: 80px;
+      padding: 40px 20px 100px;
       overflow-x: hidden;
     }
     #particles-js {
@@ -29,15 +28,14 @@
       z-index: -1;
     }
     header {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
     header img {
-      max-width: 220px;
-      width: 40vw;
-      max-width: 220px;
+      max-width: 250px;
+      width: 45vw;
       filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
       opacity: 0;
       transform: scale(0.7);
@@ -55,34 +53,34 @@
       50% { box-shadow: 0 0 15px #ffdf00, 0 0 30px #ffdf00; }
     }
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
       opacity: 0;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.3s;
-      line-height: 1.2;
+      line-height: 1.3;
     }
     h1 span {
       display: block;
-      font-size: 3rem;
-      margin-top: 5px;
+      font-size: 4rem;
+      margin-top: 10px;
     }
     main {
       width: 90%;
-      max-width: 450px;
+      max-width: 500px;
       background: rgba(0,0,0,0.4);
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
       opacity: 0;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.6s;
     }
     main p {
-      font-size: 1.1rem;
-      line-height: 1.5;
-      margin-bottom: 20px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
     }
     main a.button {
@@ -92,101 +90,6 @@
       background: #25D366;
       color: #fff;
       font-weight: 700;
-      padding: 14px 28px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 1.25rem;
-      transition: background 0.3s ease;
-      cursor: pointer;
-      user-select: none;
-      animation: glow 2s infinite;
-      width: 100%;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-    main a.button img {
-      height: 32px;
-      margin-right: 10px;
-    }
-    main a.button:hover {
-      background: #1ebd5a;
-    }
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.6);
-      padding: 10px;
-      font-size: 0.9rem;
-      text-align: center;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
-    }
-    footer a {
-      color: #f5c518;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    @media (max-width: 768px) {
-      h1 { font-size: 1.8rem; }
-      h1 span { font-size: 2.5rem; }
-      main { padding: 20px; }
-      main p { font-size: 1rem; }
-      main a.button { font-size: 1.1rem; padding: 12px 20px; }
-    }
-    @media (max-width: 480px) {
-      h1 { font-size: 1.5rem; }
-      h1 span { font-size: 2.2rem; }
-      main { padding: 15px; }
-      main p { font-size: 0.95rem; }
-      main a.button { font-size: 1rem; padding: 10px 18px; }
-    }
-  </style>
-</head>
-<body>
-  <div id="particles-js"></div>
-
-  <header>
-    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" />
-    <h1>Bienvenidos a<br><span>FACU CASINO™</span></h1>
-  </header>
-
-  <main>
-    <p>La mejor experiencia de juego virtual en Argentina.<br />
-    Cargá fichas, jugá y ganá con responsabilidad.</p>
-
-    <a href="https://wa.me/541125127839?text=Hola%20FACU%2C%20me%20creas%20un%20usuario%3F%20Mi%20nombre%20es%3A%20"
-       target="_blank" class="button" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-      Contactanos por WhatsApp
-    </a>
-  </main>
-
-  <footer>
-    <p>© 2025 Facu Casino™ - 
-      <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a>
-    </p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5, "random": true },
-        "size": { "value": 2, "random": true },
-        "line_linked": { "enable": false },
-        "move": { "enable": true, "speed": 0.8, "direction": "none", "random": true, "out_mode": "out" }
-      },
-      "interactivity": {
-        "events": {
-          "onhover": { "enable": false },
-          "onclick": { "enable": false }
-        }
-      },
-      "retina_detect": true
-    });
-  </script>
-</body>
-</html>
+      padding: 16px 32px;
+      border-radius: 35px;
+      text-d
