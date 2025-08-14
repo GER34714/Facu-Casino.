@@ -41,7 +41,7 @@
       position: relative;
       width: min(45vw, 220px);
       filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
-      animation: fadeZoomIn 1.2s ease forwards, synchronizedGlow 3s ease-in-out infinite;
+      animation: fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
       --badge-top: 16%;   /* Ajuste vertical del +18 */
       --badge-left: 75%;  /* Ajuste horizontal del +18 */
       --badge-size: 18%;  /* Tamaño del +18 para no tapar letras */
@@ -59,14 +59,13 @@
       height: auto;
       transform: translate(-50%, -50%);
       animation: fadeZoomIn 1.2s ease forwards;
-      animation-delay:0.1s;
+      animation-delay: 0.1s;
     }
 
     @keyframes fadeZoomIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
-
-    @keyframes synchronizedGlow {
-      0%,100%{ filter: drop-shadow(0 0 10px #25D366) drop-shadow(0 0 25px #25D366) drop-shadow(0 0 40px #00ffcc); }
-      50%{ filter: drop-shadow(0 0 20px #00ffcc) drop-shadow(0 0 40px #25D366) drop-shadow(0 0 60px #00ffcc); }
+    @keyframes logoGlow {
+      0%,100%{ filter: drop-shadow(0 0 8px gold) drop-shadow(0 0 15px gold); }
+      50%{ filter: drop-shadow(0 0 15px #ffdf00) drop-shadow(0 0 25px #ffdf00); }
     }
 
     h1 {
@@ -90,10 +89,15 @@
       background:#25D366; color:#fff; font-weight:700;
       padding:16px 32px; border-radius:35px; text-decoration:none;
       font-size:1.3rem; transition: background 0.3s ease; cursor:pointer;
-      user-select:none; animation: synchronizedGlow 3s ease-in-out infinite; width:100%; max-width:320px; margin:0 auto;
+      user-select:none; animation:glow 2s infinite; width:100%; max-width:320px; margin:0 auto;
     }
     main a.button img { height:36px; margin-right:12px; }
     main a.button:hover { background:#1ebd5a; }
+
+    @keyframes glow {
+      0%,100% { box-shadow: 0 0 20px #25D366, 0 0 40px #25D366, 0 0 60px #25D366; }
+      50% { box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc, 0 0 90px #00ffcc; }
+    }
 
     footer {
       text-align:center; padding:15px 0; color:#fff; font-size:0.9rem;
