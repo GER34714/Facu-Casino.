@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>Facu Casino™ - Tu lugar de suerte</title>
   <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina.">
   <style>
@@ -16,9 +16,8 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      position: relative;
       padding: 20px;
-      padding-bottom: 70px;
+      padding-bottom: 80px;
       overflow-x: hidden;
     }
     #particles-js {
@@ -31,9 +30,13 @@
     }
     header {
       margin-bottom: 20px;
-      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     header img {
+      max-width: 220px;
+      width: 40vw;
       max-width: 220px;
       filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
       opacity: 0;
@@ -58,6 +61,7 @@
       opacity: 0;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.3s;
+      line-height: 1.2;
     }
     h1 span {
       display: block;
@@ -65,9 +69,10 @@
       margin-top: 5px;
     }
     main {
+      width: 90%;
       max-width: 450px;
       background: rgba(0,0,0,0.4);
-      padding: 20px 25px;
+      padding: 25px;
       border-radius: 12px;
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       opacity: 0;
@@ -83,6 +88,7 @@
     main a.button {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       background: #25D366;
       color: #fff;
       font-weight: 700;
@@ -94,6 +100,9 @@
       cursor: pointer;
       user-select: none;
       animation: glow 2s infinite;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
     }
     main a.button img {
       height: 32px;
@@ -117,10 +126,19 @@
       text-decoration: none;
       font-weight: 600;
     }
+    @media (max-width: 768px) {
+      h1 { font-size: 1.8rem; }
+      h1 span { font-size: 2.5rem; }
+      main { padding: 20px; }
+      main p { font-size: 1rem; }
+      main a.button { font-size: 1.1rem; padding: 12px 20px; }
+    }
     @media (max-width: 480px) {
       h1 { font-size: 1.5rem; }
       h1 span { font-size: 2.2rem; }
       main { padding: 15px; }
+      main p { font-size: 0.95rem; }
+      main a.button { font-size: 1rem; padding: 10px 18px; }
     }
   </style>
 </head>
