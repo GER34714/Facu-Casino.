@@ -34,11 +34,30 @@
     }
     #particles-js { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
     header { margin-bottom:50px; display:flex; flex-direction:column; align-items:center; }
-    header img {
+    .logo-header-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    header img.logo-facu {
       max-width:220px; width:45vw;
       filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
       opacity:0; transform:scale(0.7);
       animation:fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
+    }
+    .badge-18-header {
+      width:60px; height:60px;
+      border-radius:50%;
+      border:3px solid #ffdf00;
+      padding:5px;
+      background-color:#000;
+      display:inline-block;
+      box-shadow:0 0 10px gold;
+      opacity:0; transform:scale(0.7);
+      animation:fadeZoomIn 1.2s ease forwards; 
+      animation-delay:0.1s;
+      margin-left: 10px;
     }
     @keyframes fadeZoomIn { to { opacity:1; transform:scale(1); } }
     @keyframes logoGlow {
@@ -77,8 +96,9 @@
       text-align:center; padding:15px 0; color:#fff; font-size:0.9rem;
     }
     footer a { color:#f5c518; text-decoration:none; font-weight:600; }
+    /* Enlace de reglas y condiciones */
     footer a.reglas-link {
-      color: #4FC3F7 !important;
+      color: #4FC3F7 !important; /* Azul claro para destacar */
       font-weight: 700;
       transition: color 0.3s;
     }
@@ -90,26 +110,36 @@
       display:flex; justify-content:center; gap:20px; margin-bottom:8px; align-items:center;
     }
     footer .socials img { width:32px; height:32px; vertical-align:middle; }
-    .badge-18 {
-      width:60px; height:60px;
-      border-radius:50%;
-      border:3px solid #ffdf00;
-      padding:5px;
-      background-color:#000;
-      display:inline-block;
-      box-shadow:0 0 10px gold;
-    }
     footer p { margin:4px 0; opacity:0.8; font-size:0.8rem; }
 
-    @media (max-width:768px) { h1{font-size:2rem;} h1 span{font-size:3.2rem;} main{padding:25px;} main p{font-size:1.1rem;} main a.button{font-size:1.2rem; padding:14px 28px;} }
-    @media (max-width:480px) { h1{font-size:1.8rem;} h1 span{font-size:2.8rem;} main{padding:20px;} main p{font-size:1rem;} main a.button{font-size:1.1rem; padding:12px 24px;} }
+    @media (max-width:768px) {
+      h1{font-size:2rem;}
+      h1 span{font-size:3.2rem;}
+      main{padding:25px;}
+      main p{font-size:1.1rem;}
+      main a.button{font-size:1.2rem; padding:14px 28px;}
+      .logo-header-group { gap: 10px; }
+      .badge-18-header { width:48px; height:48px; }
+    }
+    @media (max-width:480px) {
+      h1{font-size:1.8rem;}
+      h1 span{font-size:2.8rem;}
+      main{padding:20px;}
+      main p{font-size:1rem;}
+      main a.button{font-size:1.1rem; padding:12px 24px;}
+      .logo-header-group { gap: 6px; }
+      .badge-18-header { width:38px; height:38px; }
+    }
   </style>
 </head>
 <body>
   <div id="particles-js"></div>
 
   <header>
-    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" />
+    <div class="logo-header-group">
+      <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" class="logo-facu" />
+      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18-header" />
+    </div>
     <h1>Bienvenidos a<br><span>FACU CASINO™</span></h1>
   </header>
 
@@ -129,13 +159,12 @@
       Seguinos en nuestras redes sociales oficiales
     </p>
     <div class="socials">
-      <a href="https://www.instagram.com/facu_casino?igsh=ZjU1amFsaHhyem92" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.instagram.com/facu_casino?igsh=ZjU1amFsaHhyem92" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
       </a>
-      <a href="https://m.facebook.com/profile.php?id=61573901987229" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.facebook.com/profile.php?id=61573901987229" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
       </a>
-      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18">
     </div>
     <p>
       © 2025 Facu Casino™ - 
