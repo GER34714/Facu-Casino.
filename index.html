@@ -19,7 +19,6 @@
   <meta name="twitter:image" content="https://iili.io/FZTQsZx.webp" />
 
   <style>
-    /* ... (todo tu CSS igual que antes) ... */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -124,11 +123,10 @@
       background: #1ebd5a;
     }
     footer {
-      position: fixed;
-      bottom: 0;
+      position: relative;
       width: 100%;
       background: rgba(0,0,0,0.6);
-      padding: 12px;
+      padding: 12px 0;
       font-size: 1rem;
       text-align: center;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
@@ -174,8 +172,32 @@
   </main>
 
   <footer>
-    <p>© 2025 Facu Casino™ - 
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+      <p style="margin: 0; font-size: 1rem; font-weight: bold;">Seguinos en nuestras redes sociales</p>
+      <div style="display: flex; gap: 15px;">
+        <a href="https://www.instagram.com/facu_casino?igsh=ZjU1amFsaHhyem92" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" 
+               alt="Instagram" style="width: 32px; height: 32px;">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61573901987229" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Facebook_icon.svg" 
+               alt="Facebook" style="width: 32px; height: 32px;">
+        </a>
+      </div>
+    </div>
+    
+    <div style="position: absolute; right: 10px; bottom: 10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/18plus_logo.svg" 
+           alt="+18" style="width: 40px; height: 40px; opacity: 0.8;">
+    </div>
+
+    <p style="margin-top: 10px; font-size: 0.9rem;">
+      © 2025 Facu Casino™ - 
       <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a>
+    </p>
+
+    <p style="margin-top: 5px; font-size: 0.8rem; opacity: 0.8;">
+      Jugar compulsivamente es perjudicial para la salud. Juegue con responsabilidad.
     </p>
   </footer>
 
