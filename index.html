@@ -1,199 +1,202 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Facu Casino™ - Tu lugar de suerte</title>
-  <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Facu Casino™ - Tu lugar de suerte</title>
+  <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina.">
 
-  <!-- METADATOS PARA VISTA PREVIA EN REDES SOCIALES -->
-  <meta property="og:title" content="Facu Casino™ - Tu lugar de suerte" />
-  <meta property="og:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!" />
-  <meta property="og:image" content="https://iili.io/FZTQsZx.webp" />
-  <meta property="og:url" content="https://facucasino.onrender.com/" />
-  <meta property="og:type" content="website" />
+  <!-- METADATOS PARA VISTA PREVIA EN REDES SOCIALES -->
+  <meta property="og:title" content="Facu Casino™ - Tu lugar de suerte" />
+  <meta property="og:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!" />
+  <meta property="og:image" content="https://iili.io/FZTQsZx.webp" />
+  <meta property="og:url" content="https://facucasino.onrender.com/" />
+  <meta property="og:type" content="website" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Facu Casino™ - Tu lugar de suerte" />
-  <meta name="twitter:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!" />
-  <meta name="twitter:image" content="https://iili.io/FZTQsZx.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Facu Casino™ - Tu lugar de suerte" />
+  <meta name="twitter:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!" />
+  <meta name="twitter:image" content="https://iili.io/FZTQsZx.webp" />
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg,#6a0dad,#f5c518);
-      color:#fff;
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      text-align:center;
-      padding:50px 20px 100px;
-      overflow-x:hidden;
-    }
-    #particles-js { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg,#6a0dad,#f5c518);
+      color:#fff;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+      padding:50px 20px 100px;
+      overflow-x:hidden;
+    }
+    #particles-js { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; }
 
-    header { margin-bottom:50px; display:flex; flex-direction:column; align-items:center; }
+    header { margin-bottom:50px; display:flex; flex-direction:column; align-items:center; }
 
-    /* CONTENEDOR DEL LOGO CON BADGE SUPERPUESTO */
-    .logo-wrap {
-      position: relative;
-      width: min(45vw, 220px);
-      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
-      animation: fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
-      --badge-top: 16%;   /* Ajuste vertical del +18 */
-      --badge-left: 75%;  /* Ajuste horizontal del +18 */
-      --badge-size: 18%;  /* Tamaño del +18 para no tapar letras */
-    }
-    .logo-facu {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .badge-18-header {
-      position: absolute;
-      top: var(--badge-top);
-      left: var(--badge-left);
-      width: var(--badge-size);
-      height: auto;
-      transform: translate(-50%, -50%);
-      animation: fadeZoomIn 1.2s ease forwards;
-      animation-delay: 0.1s;
-    }
+    /* CONTENEDOR DEL LOGO CON BADGE SUPERPUESTO */
+    .logo-wrap {
+      position: relative;
+      width: min(45vw, 220px);
+      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+      animation: fadeZoomIn 1.2s ease forwards, synchronizedGlow 3s ease-in-out infinite;
+      --badge-top: 16%;   /* Ajuste vertical del +18 */
+      --badge-left: 75%;  /* Ajuste horizontal del +18 */
+      --badge-size: 18%;  /* Tamaño del +18 para no tapar letras */
+    }
+    .logo-facu {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .badge-18-header {
+      position: absolute;
+      top: var(--badge-top);
+      left: var(--badge-left);
+      width: var(--badge-size);
+      height: auto;
+      transform: translate(-50%, -50%);
+      animation: fadeZoomIn 1.2s ease forwards;
+      animation-delay:0.1s;
+    }
 
-    @keyframes fadeZoomIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
-    @keyframes logoGlow {
-      0%,100%{ filter: drop-shadow(0 0 8px gold) drop-shadow(0 0 15px gold); }
-      50%{ filter: drop-shadow(0 0 15px #ffdf00) drop-shadow(0 0 25px #ffdf00); }
-    }
+    @keyframes fadeZoomIn { from { opacity:0; transform:scale(0.9); } to { opacity:1; transform:scale(1); } }
 
-    h1 {
-      font-size:2.5rem; font-weight:700;
-      text-shadow:2px 2px 5px rgba(0,0,0,0.4);
-      opacity:0; animation:fadeZoomIn 1.2s ease forwards; animation-delay:0.3s;
-      line-height:1.3;
-    }
-    h1 span { display:block; font-size:4rem; margin-top:10px; }
+    @keyframes synchronizedGlow {
+      0%,100%{ filter: drop-shadow(0 0 10px #25D366) drop-shadow(0 0 25px #25D366) drop-shadow(0 0 40px #00ffcc); }
+      50%{ filter: drop-shadow(0 0 20px #00ffcc) drop-shadow(0 0 40px #25D366) drop-shadow(0 0 60px #00ffcc); }
+    }
 
-    main {
-      width:90%; max-width:500px;
-      background: rgba(0,0,0,0.4); padding:30px;
-      border-radius:15px; box-shadow:0 10px 20px rgba(0,0,0,0.3);
-      opacity:0; animation:fadeZoomIn 1.2s ease forwards; animation-delay:0.6s;
-    }
-    main p { font-size:1.2rem; line-height:1.6; margin-bottom:25px; text-shadow:1px 1px 2px rgba(0,0,0,0.5); }
-    main a.button {
-      display:inline-flex; align-items:center; justify-content:center;
-      background:#25D366; color:#fff; font-weight:700;
-      padding:16px 32px; border-radius:35px; text-decoration:none;
-      font-size:1.3rem; transition: background 0.3s ease; cursor:pointer;
-      user-select:none; animation:glow 2s infinite; width:100%; max-width:320px; margin:0 auto;
-    }
-    main a.button img { height:36px; margin-right:12px; }
-    main a.button:hover { background:#1ebd5a; }
+    h1 {
+      font-size:2.5rem; font-weight:700;
+      text-shadow:2px 2px 5px rgba(0,0,0,0.4);
+      opacity:0; animation:fadeZoomIn 1.2s ease forwards; animation-delay:0.3s;
+      line-height:1.3;
+    }
+    h1 span { display:block; font-size:4rem; margin-top:10px; }
 
-    footer {
-      text-align:center; padding:15px 0; color:#fff; font-size:0.9rem;
-    }
-    footer a { color:#f5c518; text-decoration:none; font-weight:600; }
-    footer a.reglas-link {
-      color: #4FC3F7 !important;
-      font-weight: 700;
-      transition: color 0.3s;
-    }
-    footer a.reglas-link:hover {
-      color: #0288d1 !important;
-      text-decoration: underline;
-    }
-    footer .socials {
-      display:flex; justify-content:center; gap:20px; margin-bottom:8px; align-items:center;
-    }
-    footer .socials img { width:32px; height:32px; vertical-align:middle; }
-    footer p { margin:4px 0; opacity:0.8; font-size:0.8rem; }
+    main {
+      width:90%; max-width:500px;
+      background: rgba(0,0,0,0.4); padding:30px;
+      border-radius:15px; box-shadow:0 10px 20px rgba(0,0,0,0.3);
+      opacity:0; animation:fadeZoomIn 1.2s ease forwards; animation-delay:0.6s;
+    }
+    main p { font-size:1.2rem; line-height:1.6; margin-bottom:25px; text-shadow:1px 1px 2px rgba(0,0,0,0.5); }
 
-    @media (max-width:768px) {
-      h1{font-size:2rem;}
-      h1 span{font-size:3.2rem;}
-      main{padding:25px;}
-      main p{font-size:1.1rem;}
-      main a.button{font-size:1.2rem; padding:14px 28px;}
-      .logo-wrap{
-        --badge-top: 16%;
-        --badge-left: 75%;
-        --badge-size: 18%;
-      }
-    }
-    @media (max-width:480px) {
-      h1{font-size:1.8rem;}
-      h1 span{font-size:2.8rem;}
-      main{padding:20px;}
-      main p{font-size:1rem;}
-      main a.button{font-size:1.1rem; padding:12px 24px;}
-      .logo-wrap{
-        --badge-top: 16%;
-        --badge-left: 75%;
-        --badge-size: 18%;
-      }
-    }
-  </style>
+    main a.button {
+      display:inline-flex; align-items:center; justify-content:center;
+      background:#25D366; color:#fff; font-weight:700;
+      padding:16px 32px; border-radius:35px; text-decoration:none;
+      font-size:1.3rem; transition: background 0.3s ease; cursor:pointer;
+      user-select:none; animation: synchronizedGlow 3s ease-in-out infinite; width:100%; max-width:320px; margin:0 auto;
+    }
+    main a.button img { height:36px; margin-right:12px; }
+    main a.button:hover { background:#1ebd5a; }
+
+    footer {
+      text-align:center; padding:15px 0; color:#fff; font-size:0.9rem;
+    }
+    footer a { color:#f5c518; text-decoration:none; font-weight:600; }
+    footer a.reglas-link {
+      color: #4FC3F7 !important;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+    footer a.reglas-link:hover {
+      color: #0288d1 !important;
+      text-decoration: underline;
+    }
+    footer .socials {
+      display:flex; justify-content:center; gap:20px; margin-bottom:8px; align-items:center;
+    }
+    footer .socials img { width:32px; height:32px; vertical-align:middle; }
+    footer p { margin:4px 0; opacity:0.8; font-size:0.8rem; }
+
+    @media (max-width:768px) {
+      h1{font-size:2rem;}
+      h1 span{font-size:3.2rem;}
+      main{padding:25px;}
+      main p{font-size:1.1rem;}
+      main a.button{font-size:1.2rem; padding:14px 28px;}
+      .logo-wrap{
+        --badge-top: 16%;
+        --badge-left: 75%;
+        --badge-size: 18%;
+      }
+    }
+    @media (max-width:480px) {
+      h1{font-size:1.8rem;}
+      h1 span{font-size:2.8rem;}
+      main{padding:20px;}
+      main p{font-size:1rem;}
+      main a.button{font-size:1.1rem; padding:12px 24px;}
+      .logo-wrap{
+        --badge-top: 16%;
+        --badge-left: 75%;
+        --badge-size: 18%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div id="particles-js"></div>
+  <div id="particles-js"></div>
 
-  <header>
-    <div class="logo-wrap" aria-label="Logo FACU CASINO con distintivo +18">
-      <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" class="logo-facu" />
-      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18-header" />
-    </div>
-    <h1>Bienvenidos a<br><span>FACU CASINO™</span></h1>
-  </header>
+  <header>
+    <div class="logo-wrap" aria-label="Logo FACU CASINO con distintivo +18">
+      <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" class="logo-facu" />
+      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18-header" />
+    </div>
+    <h1>Bienvenidos a<br><span>FACU CASINO™</span></h1>
+  </header>
 
-  <main>
-    <p>La mejor experiencia de juego virtual en Argentina.<br />
-    Cargá fichas, jugá y ganá con responsabilidad.</p>
+  <main>
+    <p>La mejor experiencia de juego virtual en Argentina.<br />
+    Cargá fichas, jugá y ganá con responsabilidad.</p>
 
-    <a href="https://wa.me/541125127839?text=Hola%20FACU%2C%20me%20creas%20un%20usuario%3F%20Mi%20nombre%20es%3A%20"
-       target="_blank" class="button" rel="noopener noreferrer">
-       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-       Contactanos por WhatsApp
-    </a>
-  </main>
+    <a href="https://wa.me/541125127839?text=Hola%20FACU%2C%20me%20creas%20un%20usuario%3F%20Mi%20nombre%20es%3A%20"
+       target="_blank" class="button" rel="noopener noreferrer">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+       Contactanos por WhatsApp
+    </a>
+  </main>
 
-  <footer>
-    <p style="font-weight:bold; font-size:1.05rem; margin-bottom:8px;">
-      Seguinos en nuestras redes sociales oficiales
-    </p>
-    <div class="socials">
-      <a href="https://www.instagram.com/facu_casino?igsh=ZjU1amFsaHhyem92" target="_blank">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61573901987229" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
-      </a>
-    </div>
-    <p>
-      © 2025 Facu Casino™ -
-      <a href="https://goo.su/XLVzrP" class="reglas-link">Reglas y condiciones</a>
-    </p>
-    <p>Jugar compulsivamente es perjudicial para la salud. Juegue con responsabilidad.</p>
-  </footer>
+  <footer>
+    <p style="font-weight:bold; font-size:1.05rem; margin-bottom:8px;">
+      Seguinos en nuestras redes sociales oficiales
+    </p>
+    <div class="socials">
+      <a href="https://www.instagram.com/facu_casino?igsh=ZjU1amFsaHhyem92" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61573901987229" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/145/145802.png" alt="Facebook">
+      </a>
+    </div>
+    <p>
+      © 2025 Facu Casino™ -
+      <a href="https://goo.su/XLVzrP" class="reglas-link">Reglas y condiciones</a>
+    </p>
+    <p>Jugar compulsivamente es perjudicial para la salud. Juegue con responsabilidad.</p>
+    <p style="font-weight:bold; color:#ff4444; margin-top:8px;">No se permite el ingreso a menores de 18 años.</p>
+  </footer>
 
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      "particles": {
-        "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
-        "color": { "value": "#ffffff" },
-        "shape": { "type": "circle" },
-        "opacity": { "value": 0.5, "random": true },
-        "size": { "value": 2, "random": true },
-        "line_linked": { "enable": false },
-        "move": { "enable": true, "speed": 0.8, "direction": "none", "random": true, "out_mode": "out" }
-      },
-      "interactivity": { "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
-      "retina_detect": true
-    });
-  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 2, "random": true },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.8, "direction": "none", "random": true, "out_mode": "out" }
+      },
+      "interactivity": { "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
