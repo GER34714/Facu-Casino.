@@ -51,10 +51,6 @@
       0%, 100% { box-shadow: 0 0 10px gold, 0 0 20px gold; }
       50% { box-shadow: 0 0 15px #ffdf00, 0 0 30px #ffdf00; }
     }
-    @keyframes shine {
-      0% { background-position: -200%; }
-      100% { background-position: 200%; }
-    }
     h1 {
       font-size: 2.5rem;
       font-weight: 700;
@@ -62,17 +58,6 @@
       opacity: 0;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.3s;
-    }
-    h1 span {
-      display: inline-block;
-      font-size: 3rem;
-      color: gold;
-      animation: logoGlow 3s ease-in-out infinite;
-      background: linear-gradient(90deg, gold, #fff, gold);
-      background-size: 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: logoGlow 3s ease-in-out infinite, shine 3s linear infinite;
     }
     main {
       max-width: 450px;
@@ -129,7 +114,6 @@
     }
     @media (max-width: 480px) {
       h1 { font-size: 2rem; }
-      h1 span { font-size: 2.5rem; }
       main { padding: 15px; }
     }
   </style>
@@ -139,7 +123,8 @@
 
   <header>
     <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" />
-    <h1>BIENVENIDOS<br><span>A FACU CASINO™</span></h1>
+    <h1>¡Bienvenido a
+ Facu Casino™!</h1>
   </header>
 
   <main>
