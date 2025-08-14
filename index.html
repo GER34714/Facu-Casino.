@@ -38,7 +38,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 8px; /* Más cerca */
     }
     header img.logo-facu {
       max-width:220px; width:45vw;
@@ -47,17 +47,17 @@
       animation:fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
     }
     .badge-18-header {
-      width:60px; height:60px;
+      width:38px; height:38px;
       border-radius:50%;
       border:3px solid #ffdf00;
-      padding:5px;
+      padding:3px;
       background-color:#000;
       display:inline-block;
       box-shadow:0 0 10px gold;
       opacity:0; transform:scale(0.7);
       animation:fadeZoomIn 1.2s ease forwards; 
       animation-delay:0.1s;
-      margin-left: 10px;
+      margin-left: 0;
     }
     @keyframes fadeZoomIn { to { opacity:1; transform:scale(1); } }
     @keyframes logoGlow {
@@ -118,8 +118,8 @@
       main{padding:25px;}
       main p{font-size:1.1rem;}
       main a.button{font-size:1.2rem; padding:14px 28px;}
-      .logo-header-group { gap: 10px; }
-      .badge-18-header { width:48px; height:48px; }
+      .logo-header-group { gap: 5px; }
+      .badge-18-header { width:32px; height:32px; }
     }
     @media (max-width:480px) {
       h1{font-size:1.8rem;}
@@ -127,8 +127,8 @@
       main{padding:20px;}
       main p{font-size:1rem;}
       main a.button{font-size:1.1rem; padding:12px 24px;}
-      .logo-header-group { gap: 6px; }
-      .badge-18-header { width:38px; height:38px; }
+      .logo-header-group { gap: 3px; }
+      .badge-18-header { width:24px; height:24px; }
     }
   </style>
 </head>
