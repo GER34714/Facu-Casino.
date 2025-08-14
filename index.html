@@ -12,7 +12,6 @@
   <meta property="og:image" content="https://iili.io/FZTQsZx.webp" />
   <meta property="og:url" content="https://facucasino.onrender.com/" />
   <meta property="og:type" content="website" />
-
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Facu Casino™ - Tu lugar de suerte" />
   <meta name="twitter:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!" />
@@ -42,9 +41,9 @@
       width: min(45vw, 220px);
       filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
       animation: fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
-      --badge-top: 16%;   /* Ajuste vertical del +18 */
-      --badge-left: 75%;  /* Ajuste horizontal del +18 */
-      --badge-size: 18%;  /* Tamaño del +18 para no tapar letras */
+      --badge-top: 16%;
+      --badge-left: 75%;
+      --badge-size: 18%;
     }
     .logo-facu {
       width: 100%;
@@ -88,7 +87,18 @@
       background:#25D366; color:#fff; font-weight:700;
       padding:16px 32px; border-radius:35px; text-decoration:none;
       font-size:1.3rem; transition: background 0.3s ease; cursor:pointer;
-      user-select:none; animation:glow 2s infinite; width:100%; max-width:320px; margin:0 auto;
+      user-select:none; width:100%; max-width:320px; margin:0 auto;
+      /* glow animado de WhatsApp */
+      animation: whatsappGlow 2s infinite;
+      box-shadow: 0 0 24px 4px #25D366, 0 0 60px 10px rgba(37,211,102,0.2);
+    }
+    @keyframes whatsappGlow {
+      0%, 100% {
+        box-shadow: 0 0 16px 4px #25D366, 0 0 40px 10px rgba(37,211,102,0.2);
+      }
+      50% {
+        box-shadow: 0 0 32px 12px #25D366, 0 0 60px 20px rgba(37,211,102,0.5);
+      }
     }
     main a.button img { height:36px; margin-right:12px; }
     main a.button:hover { background:#1ebd5a; }
