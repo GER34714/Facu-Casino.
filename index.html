@@ -42,10 +42,9 @@
       width: min(45vw, 220px);
       filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
       animation: fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
-      /* Ajustes finos de la posición del +18 (porcentaje relativo al contenedor) */
-      --badge-top: 14%;   /* Mueve vertical: menor es más arriba */
-      --badge-left: 73%;  /* Mueve horizontal: mayor es más a la derecha (sobre la “U”) */
-      --badge-size: 22%;  /* Tamaño relativo del badge respecto al ancho del logo */
+      --badge-top: 16%;   /* Ajuste vertical del +18 */
+      --badge-left: 75%;  /* Ajuste horizontal del +18 */
+      --badge-size: 18%;  /* Tamaño del +18 para no tapar letras */
     }
     .logo-facu {
       width: 100%;
@@ -59,11 +58,6 @@
       width: var(--badge-size);
       height: auto;
       transform: translate(-50%, -50%);
-      border-radius:50%;
-      border:3px solid #ffdf00;
-      padding:4px;
-      background-color:#000;
-      box-shadow:0 0 10px gold;
       animation: fadeZoomIn 1.2s ease forwards;
       animation-delay: 0.1s;
     }
@@ -124,11 +118,10 @@
       main{padding:25px;}
       main p{font-size:1.1rem;}
       main a.button{font-size:1.2rem; padding:14px 28px;}
-      /* Ajuste fino móvil si lo necesitás */
       .logo-wrap{
-        --badge-top: 15%;
-        --badge-left: 72%;
-        --badge-size: 24%;
+        --badge-top: 16%;
+        --badge-left: 75%;
+        --badge-size: 18%;
       }
     }
     @media (max-width:480px) {
@@ -139,8 +132,8 @@
       main a.button{font-size:1.1rem; padding:12px 24px;}
       .logo-wrap{
         --badge-top: 16%;
-        --badge-left: 72%;
-        --badge-size: 26%;
+        --badge-left: 75%;
+        --badge-size: 18%;
       }
     }
   </style>
