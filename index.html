@@ -1,104 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facu Casino</title>
-<style>
-  /* Reset básico */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-
-  body {
-    background: linear-gradient(135deg, #6a0dad, #ffd700);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    text-align: center;
-  }
-
-  .logo {
-    width: 150px;
-    max-width: 40vw;
-    margin-bottom: 20px;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-  }
-
-  p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-  }
-
-  .whatsapp-btn {
-    background-color: #25d366;
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    transition: transform 0.2s;
-  }
-
-  .whatsapp-btn:hover {
-    transform: scale(1.05);
-  }
-
-  .whatsapp-btn img {
-    width: 25px;
-    margin-right: 10px;
-  }
-
-  /* Media Queries para móviles */
-  @media (max-width: 768px) {
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Facu Casino™ - Tu lugar de suerte</title>
+  <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #6a0dad, #f5c518);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 50px 20px 100px;
+      overflow-x: hidden;
+    }
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    header {
+      margin-bottom: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header img {
+      max-width: 220px;
+      width: 45vw;
+      filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
+      opacity: 0;
+      transform: scale(0.7);
+      animation: fadeZoomIn 1.2s ease forwards, logoGlow 3s ease-in-out infinite;
+    }
+    @keyframes fadeZoomIn {
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes logoGlow {
+      0%, 100% { filter: drop-shadow(0 0 8px gold) drop-shadow(0 0 15px gold); }
+      50% { filter: drop-shadow(0 0 15px #ffdf00) drop-shadow(0 0 25px #ffdf00); }
+    }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 10px gold, 0 0 20px gold; }
+      50% { box-shadow: 0 0 15px #ffdf00, 0 0 30px #ffdf00; }
+    }
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+      opacity: 0;
+      animation: fadeZoomIn 1.2s ease forwards;
+      animation-delay: 0.3s;
+      line-height: 1.3;
     }
-    p {
+    h1 span {
+      display: block;
+      font-size: 4rem;
+      margin-top: 10px;
+    }
+    main {
+      width: 90%;
+      max-width: 500px;
+      background: rgba(0,0,0,0.4);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      opacity: 0;
+      animation: fadeZoomIn 1.2s ease forwards;
+      animation-delay: 0.6s;
+    }
+    main p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+    main a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 35px;
+      text-decoration: none;
+      font-size: 1.3rem;
+      transition: background 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+      animation: glow 2s infinite;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    main a.button img {
+      height: 36px;
+      margin-right: 12px;
+    }
+    main a.button:hover {
+      background: #1ebd5a;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      padding: 12px;
       font-size: 1rem;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
     }
-    .whatsapp-btn {
-      padding: 12px 25px;
-      font-size: 1rem;
+    footer a {
+      color: #f5c518;
+      text-decoration: none;
+      font-weight: 600;
     }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.5rem;
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      h1 span { font-size: 3.2rem; }
+      main { padding: 25px; }
+      main p { font-size: 1.1rem; }
+      main a.button { font-size: 1.2rem; padding: 14px 28px; }
     }
-    p {
-      font-size: 0.9rem;
+    @media (max-width: 480px) {
+      h1 { font-size: 1.8rem; }
+      h1 span { font-size: 2.8rem; }
+      main { padding: 20px; }
+      main p { font-size: 1rem; }
+      main a.button { font-size: 1.1rem; padding: 12px 24px; }
     }
-    .logo {
-      width: 120px;
-    }
-  }
-</style>
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
 
-<img src="logo.png" alt="Facu Casino Logo" class="logo">
+  <header>
+    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" />
+    <h1>Bienvenidos a<br><span>FACU CASINO™</span></h1>
+  </header>
 
-<h1>¡Bienvenido a Facu Casino!</h1>
-<p>Disfruta de nuestras plataformas virtuales 24/7 y gana grandes premios.</p>
+  <main>
+    <p>La mejor experiencia de juego virtual en Argentina.<br />
+    Cargá fichas, jugá y ganá con responsabilidad.</p>
 
-<a href="https://wa.me/5491133603448" class="whatsapp-btn" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"> Contáctanos
-</a>
+    <a href="https://wa.me/541125127839?text=Hola%20FACU%2C%20me%20creas%20un%20usuario%3F%20Mi%20nombre%20es%3A%20"
+       target="_blank" class="button" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+      Contactanos por WhatsApp
+    </a>
+  </main>
 
+  <footer>
+    <p>© 2025 Facu Casino™ - 
+      <a href="https://goo.su/XLVzrP" target="_blank" rel="noopener noreferrer">Reglas y condiciones</a>
+    </p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 40, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 2, "random": true },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.8, "direction": "none", "random": true, "out_mode": "out" }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": false },
+          "onclick": { "enable": false }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
 </body>
 </html>
