@@ -55,7 +55,6 @@
       100% { filter: drop-shadow(0 0 12px #ff00ff) drop-shadow(0 0 25px #ff00ff); }
     }
 
-    /* ✅ TITULO BIENVENIDOS CON PULSO */
     header h1{
       font-size:3.2rem;
       font-weight:800;
@@ -66,7 +65,7 @@
     }
     @keyframes fadeZoomIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
 
-    /* ✅ LOGO GRANDE CON PULSO */
+    /* ✅ LOGO GRANDE */
     .logo-grande{
       width:min(60vw,260px);
       margin:0 auto 40px;
@@ -108,12 +107,12 @@
     main a.button img{height:38px;margin-right:12px;}
     main a.button:hover{background:#1ebd5a;}
 
-    /* ✅ FOOTER SUPER CONTRASTADO */
+    /* ✅ FOOTER CONTRASTE ALTO */
     footer{
       width:100%;
       background:rgba(0,0,0,0.9);
       text-align:center;
-      padding:25px 10px 50px;
+      padding:25px 10px 40px;
       color:#00faff;
       font-size:1rem;
       text-shadow:0 0 6px #000;
@@ -138,22 +137,23 @@
     footer .socials img{width:36px;height:36px;vertical-align:middle;}
     footer p{margin:8px 0;font-size:0.95rem;}
 
-    /* ✅ LOGO CHICO CON PULSO NEÓN */
+    /* ✅ LOGO CHICO AL FINAL */
     .logo-chico{
-      width:min(42vw,190px);
+      position:relative;
+      width:min(36vw,150px);
       margin:25px auto 0;
       animation:neonPulse 6s linear infinite;
     }
-    .logo-chico img{
+    .logo-chico img.main{
       width:100%;
       height:auto;
       display:block;
     }
-    .badge-18{
+    .logo-chico img.badge{
       position:absolute;
-      width:20%;
-      top:18%;
-      left:78%;
+      width:22%;
+      top:20%;
+      left:80%;
       transform:translate(-50%,-50%);
     }
   </style>
@@ -171,7 +171,7 @@
     <h1>Bienvenidos</h1>
   </header>
 
-  <!-- ✅ LOGO GRANDE -->
+  <!-- ✅ LOGO GRANDE PRINCIPAL -->
   <div class="logo-grande">
     <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo Grande">
   </div>
@@ -207,10 +207,10 @@
        Se prohíbe el ingreso a menores de 18 años.<br>
        Juegue con responsabilidad.</p>
 
-    <!-- ✅ LOGO CHICO AL FINAL -->
+    <!-- ✅ LOGO CHICO CERRANDO LA LANDING -->
     <div class="logo-chico" aria-label="Logo FACU CASINO con distintivo +18">
-      <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo Chico">
-      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18" />
+      <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo Chico" class="main">
+      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge" />
     </div>
   </footer>
 
