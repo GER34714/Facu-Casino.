@@ -28,22 +28,21 @@
       flex-direction:column;
       align-items:center;
       text-align:center;
-      padding:0 20px 100px;
+      padding:0 20px 0;
       overflow-x:hidden;
     }
     #particles-js{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
 
-    /* ✅ NUEVO BANNER ARRIBA */
+    /* ✅ BANNER ARRIBA SIN CORTE */
     .top-banner{
       width:100%;
-      max-height:180px;
-      overflow:hidden;
       margin-bottom:20px;
     }
     .top-banner img{
       width:100%;
       height:auto;
       display:block;
+      object-fit:contain;
     }
 
     header{margin-bottom:30px;}
@@ -71,7 +70,7 @@
       background:#25D366;color:#fff;font-weight:700;
       padding:16px 32px;border-radius:35px;text-decoration:none;
       font-size:1.3rem;transition:background 0.3s ease;
-      user-select:none;width:100%;max-width:320px;margin:0 auto 30px;
+      user-select:none;width:100%;max-width:320px;margin:0 auto;
       animation:whatsappGlow 2s infinite;
     }
     @keyframes whatsappGlow{
@@ -81,12 +80,12 @@
     main a.button img{height:36px;margin-right:12px;}
     main a.button:hover{background:#1ebd5a;}
 
-    /* ✅ LOGO MOVIDO ABAJO */
+    /* ✅ LOGO AL PIE */
     .logo-wrap{
       position:relative;
       width:min(45vw,220px);
       filter:drop-shadow(2px 2px 5px rgba(0,0,0,0.5));
-      margin:30px auto 0;
+      margin:60px auto 40px;   /* empuja bien hacia abajo */
       animation:fadeZoomIn 1.2s ease forwards,logoGlow 3s ease-in-out infinite;
     }
     .logo-facu{width:100%;height:auto;display:block;}
@@ -114,7 +113,7 @@
 <body>
   <div id="particles-js"></div>
 
-  <!-- ✅ NUEVO BANNER ARRIBA -->
+  <!-- ✅ BANNER SUPERIOR -->
   <div class="top-banner">
     <img src="https://iili.io/KcrKBql.md.webp" alt="Banner superior Facu Casino">
   </div>
@@ -132,13 +131,13 @@
        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
        Contactanos por WhatsApp
     </a>
-
-    <!-- ✅ LOGO MOVIDO ABAJO -->
-    <div class="logo-wrap" aria-label="Logo FACU CASINO con distintivo +18">
-      <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" class="logo-facu" />
-      <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18-header" />
-    </div>
   </main>
+
+  <!-- ✅ LOGO AL FINAL DE LA LANDING -->
+  <div class="logo-wrap" aria-label="Logo FACU CASINO con distintivo +18">
+    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo" class="logo-facu" />
+    <img src="https://iili.io/FtUZvLB.png" alt="+18" class="badge-18-header" />
+  </div>
 
   <footer>
     <p style="font-weight:bold; font-size:1.05rem; margin-bottom:8px;">
