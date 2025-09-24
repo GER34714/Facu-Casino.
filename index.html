@@ -33,18 +33,6 @@
     }
     #particles-js{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;}
 
-    /* ✅ BANNER */
-    .top-banner{
-      width:100%;
-      margin-bottom:20px;
-    }
-    .top-banner img{
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:contain;
-    }
-
     /* ✅ PULSO NEÓN MULTICOLOR */
     @keyframes neonPulse{
       0%   { filter: drop-shadow(0 0 12px #ff00ff) drop-shadow(0 0 25px #ff00ff); }
@@ -55,39 +43,43 @@
       100% { filter: drop-shadow(0 0 12px #ff00ff) drop-shadow(0 0 25px #ff00ff); }
     }
 
-    header h1{
-      font-size:3.2rem;
-      font-weight:800;
+    header{
       margin:20px 0;
+    }
+    header h1{
+      font-size:3rem;
+      font-weight:800;
       animation:fadeZoomIn 1.2s ease forwards,
                  neonPulse 6s linear infinite;
       text-shadow:0 0 8px #000;
+      margin-bottom:20px;
     }
     @keyframes fadeZoomIn{from{opacity:0;transform:scale(0.9);}to{opacity:1;transform:scale(1);}}
 
-    /* ✅ LOGO GRANDE */
-    .logo-grande{
+    /* ✅ LOGO PRINCIPAL */
+    .logo-principal{
       width:min(60vw,260px);
       margin:0 auto 40px;
       animation:fadeZoomIn 1.2s ease forwards,
                  neonPulse 6s linear infinite;
     }
-    .logo-grande img{
+    .logo-principal img{
       width:100%;
       height:auto;
       display:block;
     }
 
+    /* ✅ BLOQUE CENTRAL SEMITRANSPARENTE */
     main{
       width:90%;max-width:500px;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.35); /* semi transparente */
       padding:30px;
       border-radius:15px;
-      box-shadow:0 10px 25px rgba(0,0,0,0.6);
+      box-shadow:0 10px 25px rgba(0,0,0,0.5);
       animation:fadeZoomIn 1.2s ease forwards;
     }
     main p{
-      font-size:1.3rem;
+      font-size:1.2rem;
       line-height:1.7;
       margin-bottom:25px;
       text-shadow:0 0 4px #000;
@@ -110,7 +102,7 @@
     /* ✅ FOOTER CONTRASTE ALTO */
     footer{
       width:100%;
-      background:rgba(0,0,0,0.9);
+      background:rgba(0,0,0,0.85);
       text-align:center;
       padding:25px 10px 40px;
       color:#00faff;
@@ -151,8 +143,8 @@
     }
     .logo-chico img.badge{
       position:absolute;
-      width:22%;
-      top:20%;
+      width:20%;
+      top:18%;
       left:80%;
       transform:translate(-50%,-50%);
     }
@@ -161,19 +153,14 @@
 <body>
   <div id="particles-js"></div>
 
-  <!-- ✅ BANNER SUPERIOR -->
-  <div class="top-banner">
-    <img src="https://iili.io/KcrKBql.md.webp" alt="Banner superior Facu Casino">
-  </div>
-
   <!-- ✅ TITULO BIENVENIDOS -->
   <header>
     <h1>Bienvenidos</h1>
   </header>
 
-  <!-- ✅ LOGO GRANDE PRINCIPAL -->
-  <div class="logo-grande">
-    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo Grande">
+  <!-- ✅ LOGO PNG PRINCIPAL -->
+  <div class="logo-principal">
+    <img src="https://iili.io/FZTQsZx.webp" alt="Facu Casino™ Logo">
   </div>
 
   <main>
