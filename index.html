@@ -82,6 +82,7 @@
       font-size:1.4rem;transition:background 0.3s ease;
       user-select:none;width:100%;max-width:340px;margin:0 auto;
       animation:whatsappGlow 2s infinite;
+      position:relative;overflow:hidden;
     }
     @keyframes whatsappGlow{
       0%,100%{box-shadow:0 0 8px 2px #25D366,0 0 18px 2px rgba(37,211,102,0.12);}
@@ -89,6 +90,19 @@
     }
     main a.button img{height:38px;margin-right:12px;}
     main a.button:hover{background:#1ebd5a;}
+
+    /* ✨ Efecto brillo texto botón */
+    main a.button span{
+      background: linear-gradient(90deg,#fff,#d4ffb2,#fff);
+      background-size:200%;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      animation:shine 2.5s linear infinite;
+    }
+    @keyframes shine{
+      0%{background-position:200% 0;}
+      100%{background-position:-200% 0;}
+    }
 
     footer{
       width:100%;
@@ -148,13 +162,12 @@
 
   <main>
     <p>La mejor experiencia de juego virtual en Argentina.<br/>
-    Pedime aca tu usuario,para participar de la promo 😎🔥.</p>
+    Pedime acá tu usuario para empezar a jugar 😎🔥.</p>
 
     <a href="https://wa.me/541138219568?text=Hola%20Facu%20me%20creas%20un%20usuario%3F"
        target="_blank" class="button" rel="noopener noreferrer">
        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-     
- USUARIO GANADOR ACA 📲😎
+       <span>CREAR USUARIO 🎰🔥</span>
     </a>
   </main>
 
